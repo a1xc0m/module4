@@ -28,7 +28,6 @@ def binarySearch(a):
     else:
         print("ID = ", mid)
         
-
 bubbleSort(a)
 print(a)
 binarySearch(a)

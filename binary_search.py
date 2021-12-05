@@ -1,4 +1,7 @@
-a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+from random import randint
+
+n = 10
+a = [randint(0, 100) for i in range(n)]
 print('Getting array: ', a)
 
 def bubbleSort(a):

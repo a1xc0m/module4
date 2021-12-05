@@ -1,4 +1,5 @@
 a = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+print('Getting array: ', a)
 
 def bubbleSort(a):
     l = len(a)
@@ -9,26 +10,26 @@ def bubbleSort(a):
                 a[j] = a[j + 1]
                 a[j + 1] = temp
 
-def binarySearch(a):
-    value = int(input())
-    
-    mid = len(a) // 2
-    low = 0
-    high = len(a) - 1
-    
-    while a[mid] != value and low <= high:
-        if value > a[mid]:
-            low = mid - 1
-        else:
-            high = mid - 1
-        mid = (low + high) // 2
-        
-    if low > high:
-        print('No value')
-    else:
-        print("ID = ", mid)
-        
 bubbleSort(a)
-print(a)
-binarySearch(a)
-print(a)
+print('Sort array: ', a)
+
+def binarySearch(list, item):
+    first = 0
+    last = len(list) - 1
+    found = False
+    
+    while first <= last and not found:
+        midpoint = (first + last) // 2
+        if list[midpoint] == item:
+            found = True
+        else:
+            if item < list[midpoint]:
+                last = midpoint - 1
+            else:
+                first = midpoint + 1
+                
+    return found
+
+testlist = a
+b = int(input('Search value: '))
+print(binarySearch(testlist, b))

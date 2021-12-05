@@ -1,6 +1,6 @@
 from random import randint
 
-n = 10
+n = int(input('Size array: '))
 a = [randint(0, 100) for i in range(n)]
 print('Getting array: ', a)
 

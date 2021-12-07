@@ -16,5 +16,3 @@ def insertionSort(a):
             
 insertionSort(a)
 print('Result: ', a)
-            
-            

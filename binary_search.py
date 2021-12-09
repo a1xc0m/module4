@@ -13,26 +13,21 @@ def bubbleSort(a):
                 a[j] = a[j + 1]
                 a[j + 1] = temp
 
-bubbleSort(a)
-print('Sort array: ', a)
-
 def binarySearch(list, item):
     first = 0
     last = len(list) - 1
-    found = False
     
-    while first <= last and not found:
-        midpoint = (first + last) // 2
-        if list[midpoint] == item:
-            found = True
-        else:
-            if item < list[midpoint]:
-                last = midpoint - 1
-            else:
-                first = midpoint + 1
-                
-    return found
+    while first <= last:
+        mid = (first + last) // 2
+        
+        if list[mid] == item:
+            return mid
+        elif list[mid] > item:
+            last = mid - 1
+        elif list[mid] < item:
+            first = mid + 1
 
-testlist = a
+bubbleSort(a)
+print('Sort array: ', a)
 b = int(input('Search value: '))
-print(binarySearch(testlist, b))
+print(binarySearch(a, b))
